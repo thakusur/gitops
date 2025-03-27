@@ -60,7 +60,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: hub.docker.com/r/kavana14/vote-front
+        image: https://hub.docker.com/r/docker/example-voting-app-vote
         ports:
         - containerPort: 80
         resources:
