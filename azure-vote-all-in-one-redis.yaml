@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azure-vote-back
+  namespace: mbs2
 spec:
   replicas: 1
   selector:
@@ -28,6 +29,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: azure-vote-back
+  namespace: mbs2
 spec:
   ports:
   - port: 6379
@@ -38,6 +40,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: azure-vote-front
+  namespace: mbs2
 spec:
   replicas: 1
   selector:
@@ -57,7 +60,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: mcr.microsoft.com/azuredocs/azure-vote-front:v1
+        image: hub.docker.com/r/kavana14/vote-front
         ports:
         - containerPort: 80
         resources:
@@ -73,6 +76,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: azure-vote-front
+  namespace: mbs2
 spec:
   type: LoadBalancer
   ports:
