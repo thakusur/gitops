@@ -174,4 +174,4 @@ spec:
   selector:
     app: todo-app
     tier: frontend
-  type: NodePort
+  type: LoadBalancer
